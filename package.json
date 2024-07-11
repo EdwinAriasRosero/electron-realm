@@ -1,0 +1,28 @@
+{
+  "name": "typescript-realm-electron",
+  "version": "1.0.0",
+  "description": "A boilerplate for typescript, electron and realm.",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "tsc",
+    "copyfiles": "copyfiles -f ./public/** dist",
+    "run": "npx ts-node ./src/index.ts",
+    "serve": "npm run build && npm run copyfiles && npm run start",
+    "electron-dev": "npm run build && concurrently \"tsc --watch\" \"electron .\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "copyfiles": "^2.4.1",
+    "electron": "^31.2.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-reloader": "^1.2.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "realm": "^12.11.1"
+  }
+}
